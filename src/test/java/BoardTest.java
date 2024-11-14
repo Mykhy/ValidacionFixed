@@ -110,16 +110,59 @@ public class BoardTest {
         assertEquals(initialY, aliens.get(0).getY());
     }
     @org.junit.jupiter.api.Test
-    void updateAliens1(){
+    void updateAliens2(){
         board.gameInit();
-        board.setDirection(-1);
+        board.setDirection(1);
         List<Alien> aliens = board.getAliens();
         aliens.get(0).setX(150);
         aliens.get(0).setY(5);
         int initialX = aliens.get(0).getX();
         int initialY = aliens.get(0).getY();
         board.update_aliens();
-        assertTrue(aliens.get(0).getX() < initialX);
+        assertTrue(aliens.get(0).getX() > initialX);
         assertEquals(initialY, aliens.get(0).getY());
     }
+    @org.junit.jupiter.api.Test
+    void updateAliens3(){
+        board.gameInit();
+        board.setDirection(-1);
+        List<Alien> aliens = board.getAliens();
+        aliens.get(0).setX(5);
+        aliens.get(0).setY(5);
+        int initialX = aliens.get(0).getX();
+        int initialY = aliens.get(0).getY();
+        board.update_aliens();
+        assertEquals(1, board.getDirection());
+        assertTrue(aliens.get(0).getX() >= initialX);
+        assertTrue(initialY > aliens.get(0).getY());
+    }
+    @org.junit.jupiter.api.Test
+    void updateAliens4(){
+        board.gameInit();
+        board.setDirection(1);
+        List<Alien> aliens = board.getAliens();
+        aliens.get(0).setX(328);
+        aliens.get(0).setY(5);
+        int initialX = aliens.get(0).getX();
+        int initialY = aliens.get(0).getY();
+        board.update_aliens();
+        assertEquals(-1, board.getDirection());
+        assertTrue(aliens.get(0).getX() <= initialX);
+        assertTrue(initialY > aliens.get(0).getY());
+    }
+    @org.junit.jupiter.api.Test
+    void updateAliens5(){
+        board.gameInit();
+        board.setDirection(1);
+        List<Alien> aliens = board.getAliens();
+        aliens.get(0).setX(328);
+        aliens.get(0).setY(263);
+        int initialX = aliens.get(0).getX();
+        int initialY = aliens.get(0).getY();
+        board.update_aliens();
+        assertEquals("Invasion!", board.getMessage());
+        assertFalse(board.isInGame());
+        assertTrue(initialY > aliens.get(0).getY());
+    }
+
 }
