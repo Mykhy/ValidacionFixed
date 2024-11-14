@@ -109,4 +109,17 @@ public class BoardTest {
         assertTrue(aliens.get(0).getX() < initialX);
         assertEquals(initialY, aliens.get(0).getY());
     }
+    @org.junit.jupiter.api.Test
+    void updateAliens1(){
+        board.gameInit();
+        board.setDirection(-1);
+        List<Alien> aliens = board.getAliens();
+        aliens.get(0).setX(150);
+        aliens.get(0).setY(5);
+        int initialX = aliens.get(0).getX();
+        int initialY = aliens.get(0).getY();
+        board.update_aliens();
+        assertTrue(aliens.get(0).getX() < initialX);
+        assertEquals(initialY, aliens.get(0).getY());
+    }
 }
