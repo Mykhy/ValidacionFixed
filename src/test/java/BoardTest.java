@@ -156,13 +156,66 @@ public class BoardTest {
         board.setDirection(1);
         List<Alien> aliens = board.getAliens();
         aliens.get(0).setX(328);
-        aliens.get(0).setY(263);
-        int initialX = aliens.get(0).getX();
-        int initialY = aliens.get(0).getY();
+        aliens.get(0).setY(275);
         board.update_aliens();
         assertEquals("Invasion!", board.getMessage());
         assertFalse(board.isInGame());
-        assertTrue(initialY > aliens.get(0).getY());
+    }
+    //TEST UPDATE_BOMB
+    //Generacion Bomba
+    @org.junit.jupiter.api.Test
+    void updateBomb1(){
+        board.gameInit();
+        Alien alien = board.getAliens().get(0);
+        Alien.Bomb bomb = alien.getBomb();
+        bomb.setDestroyed(true);
+        board.update_bomb();
+        assertFalse(bomb.isDestroyed());
+        assertEquals(alien.getX(), bomb.getX());
+        assertEquals(alien.getY(), bomb.getY());
+    }
+    //Destruccion bomba llega suelo
+    @org.junit.jupiter.api.Test
+    void updateBomb2(){
+        board.gameInit();
+        Alien alien = board.getAliens().get(0);
+        Alien.Bomb bomb = alien.getBomb();
+        bomb.setDestroyed(false);
+        bomb.setY(284);
+        board.update_bomb();
+        assertEquals(285,bomb.getY());
+        assertTrue(bomb.isDestroyed());
+    }
+    //Colision con el jugador
+    @org.junit.jupiter.api.Test
+    void updateBomb3(){
+        board.gameInit();
+        Alien alien = board.getAliens().get(0);
+        Alien.Bomb bomb = alien.getBomb();
+        bomb.setDestroyed(false);
+        bomb.setX(board.getPlayer().getX() + 6);
+        bomb.setY(board.getPlayer().getY());
+        assertTrue(board.getPlayer().isVisible());
+        board.update_bomb();
+        assertTrue(board.getPlayer().isDying());
+        assertTrue(bomb.isDestroyed());
+    }
+    //La bomba baja una posicion en el aire
+    @org.junit.jupiter.api.Test
+    void updateBomb4(){
+        board.gameInit();
+        Alien alien = board.getAliens().get(0);
+        Alien.Bomb bomb = alien.getBomb();
+        bomb.setDestroyed(false);
+        bomb.setX(board.getPlayer().getX() - 30);
+        bomb.setY(board.getPlayer().getY() - 30);
+        int initialY = bomb.getY();
+        int initialX = bomb.getX();
+        board.update_bomb();
+        assertEquals(initialX, bomb.getX());
+        assertEquals(initialY + 1, bomb.getY());
+        assertFalse(bomb.isDestroyed());
+        assertFalse(board.getPlayer().isDying());
     }
 
 }

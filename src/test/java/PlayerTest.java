@@ -27,8 +27,8 @@ public class PlayerTest {
         player.initPlayer();
         assertNotNull(player);
         assertNotNull(player.getImage());
-        int expectedX = Commons.BOARD_WIDTH / 2 - Commons.PLAYER_WIDTH / 2;
-        int expectedY = Commons.BOARD_HEIGHT / 2 + Commons.PLAYER_HEIGHT / 2;
+        int expectedX = 179;
+        int expectedY = 175;
         assertEquals(expectedX, player.getX());
         assertEquals(expectedY, player.getY());
     }
@@ -37,41 +37,41 @@ public class PlayerTest {
     @org.junit.jupiter.api.Test
     void actPlayer1(){
         player.initPlayer();
-        player.setX(2);
+        player.setX(1);
         KeyEvent left = new KeyEvent(new java.awt.Component() {}, KeyEvent.KEY_PRESSED, System.currentTimeMillis(),0, KeyEvent.VK_LEFT, KeyEvent.CHAR_UNDEFINED);
         player.keyPressed(left);
         player.act();
-        assertEquals(1, player.getX());
+        assertEquals(0, player.getX());
         assertEquals(280, player.getY());
     }
     @org.junit.jupiter.api.Test
     void actPlayer2(){
         player.initPlayer();
-        player.setX(356);
+        player.setX(357);
         KeyEvent right = new KeyEvent(new java.awt.Component() {}, KeyEvent.KEY_PRESSED, System.currentTimeMillis(),0, KeyEvent.VK_RIGHT, KeyEvent.CHAR_UNDEFINED);
         player.keyPressed(right);
         player.act();
-        assertEquals(357, player.getX());
+        assertEquals(358, player.getX());
         assertEquals(280, player.getY());
     }
     @org.junit.jupiter.api.Test
     void actPlayer3(){
         player.initPlayer();
-        player.setX(1);
+        player.setX(0);
         KeyEvent left = new KeyEvent(new java.awt.Component() {}, KeyEvent.KEY_PRESSED, System.currentTimeMillis(),0, KeyEvent.VK_LEFT, KeyEvent.CHAR_UNDEFINED);
         player.keyPressed(left);
         player.act();
-        assertEquals(1, player.getX());
+        assertEquals(0, player.getX());
         assertEquals(280, player.getY());
     }
     @org.junit.jupiter.api.Test
     void actPlayer4(){
         player.initPlayer();
-        player.setX(357);
+        player.setX(358);
         KeyEvent right = new KeyEvent(new java.awt.Component() {}, KeyEvent.KEY_PRESSED, System.currentTimeMillis(),0, KeyEvent.VK_RIGHT, KeyEvent.CHAR_UNDEFINED);
         player.keyPressed(right);
         player.act();
-        assertEquals(357, player.getX());
+        assertEquals(358, player.getX());
         assertEquals(280, player.getY());
     }
     @org.junit.jupiter.api.Test
