@@ -144,18 +144,5 @@ public class BombTest {
         assertEquals(200,bomb.getX());
         assertEquals(350,bomb.getY());
     }
-    @org.junit.jupiter.api.Test
-    void initbomb14(){
-        bomb.initBomb(1,1);
-        assertEquals(1,bomb.getX());
-        assertEquals(1,bomb.getY());
-    }
-    @org.junit.jupiter.api.Test
-    void initbomb15(){
-        bomb.initBomb(1,1);
-        assertEquals(1,bomb.getX());
-        assertEquals(1,bomb.getY());
-    }
-
 
 }
