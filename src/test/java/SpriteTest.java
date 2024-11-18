@@ -17,18 +17,18 @@ public class SpriteTest {
     @org.junit.jupiter.api.Test
     void die1(){
         sprite.die();
-        assertEquals(false, sprite.isVisible());
+        assertFalse(sprite.isVisible());
     }
     //TEST ISVISIBLE Y SETVISIBLE
     @org.junit.jupiter.api.Test
     void isVisible1(){
         sprite.setVisible(true);
-        assertEquals(true, sprite.isVisible());
+        assertTrue(sprite.isVisible());
     }
     @org.junit.jupiter.api.Test
     void isVisible2(){
         sprite.setVisible(false);
-        assertEquals(false, sprite.isVisible());
+        assertFalse(sprite.isVisible());
     }
 
 }
