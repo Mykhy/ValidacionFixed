@@ -86,6 +86,7 @@ public class PlayerTest {
     // keyPressed
     @org.junit.jupiter.api.Test
     void testKeyPressedRight() {
+
         JPanel panel = new JPanel();
         KeyEvent event = new KeyEvent(panel, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_RIGHT, ' ');
         player.keyPressed(event);
