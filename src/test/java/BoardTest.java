@@ -49,14 +49,15 @@ public class BoardTest {
         board.gameInit();
         board.setDeaths(Commons.NUMBER_OF_ALIENS_TO_DESTROY);
         board.update();
-        assertFalse(board.isInGame());
+        assertEquals(false, board.isInGame());
     }
     @org.junit.jupiter.api.Test
     void update2(){
         board.gameInit();
+        board.setDeaths(0);
         board.setInGame(true);
         board.update();
-        assertTrue(board.isInGame());
+        assertEquals(true, board.isInGame());
     }
     //TEST UPDATE_SHOT
     @org.junit.jupiter.api.Test
@@ -65,10 +66,10 @@ public class BoardTest {
         Alien alien = board.getAliens().get(0);
         board.setDeaths(0);
         Shot shot = new Shot();
-        shot.initShot(alien.getX() - 6, alien.getY() + 1);
+        shot.initShot(alien.getX() + 6, alien.getY() + 1);
         board.setShot(shot);
         board.update_shots();
-        assertTrue(alien.isDying());
+        assertEquals(true,alien.isDying());
         assertEquals(1, board.getDeaths());
     }
     @org.junit.jupiter.api.Test
@@ -80,7 +81,7 @@ public class BoardTest {
         shot.initShot(alien.getX(), alien.getY() + 7);
         board.setShot(shot);
         board.update_shots();
-        assertTrue(alien.isDying());
+        assertEquals(true,alien.isDying());
         assertEquals(1, board.getDeaths());
     }
     //FUERA DEL TABLERO Y DEL ALIEN
