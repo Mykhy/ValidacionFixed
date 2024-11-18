@@ -68,7 +68,7 @@ public class Alien extends Sprite {
         return bomb;
     }
 
-    public class Bomb extends Sprite {
+    public static class Bomb extends Sprite {
 
         private boolean destroyed;
 
@@ -90,7 +90,7 @@ public class Alien extends Sprite {
          * Si el valor X o Y indicados superan el margen de la pantalla, se les asignará el valor máximo permitido.
          * Si se introduce algún valor negativo, será reemplazado por 0.
          * */
-        private void initBomb(int x, int y) {
+        public void initBomb(int x, int y) {
 
             setDestroyed(true);
 
