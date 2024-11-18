@@ -47,6 +47,7 @@ public class BoardTest {
     @org.junit.jupiter.api.Test
     void update1(){
         board.gameInit();
+        board.setInGame(true);
         board.setDeaths(Commons.NUMBER_OF_ALIENS_TO_DESTROY);
         board.update();
         assertFalse(board.isInGame());
