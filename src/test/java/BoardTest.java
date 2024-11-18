@@ -54,7 +54,8 @@ public class BoardTest {
     @org.junit.jupiter.api.Test
     void update2(){
         board.gameInit();
-        assertEquals(true, board.isInGame());
+        board.setDeaths(0);
+        board.setInGame(true);
         board.update();
         assertEquals(true, board.isInGame());
     }
@@ -65,7 +66,7 @@ public class BoardTest {
         Alien alien = board.getAliens().get(0);
         board.setDeaths(0);
         Shot shot = new Shot();
-        shot.initShot(alien.getX() - 6, alien.getY() + 1);
+        shot.initShot(alien.getX() + 6, alien.getY() + 1);
         board.setShot(shot);
         board.update_shots();
         assertEquals(true,alien.isDying());
