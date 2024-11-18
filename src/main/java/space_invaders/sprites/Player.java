@@ -92,4 +92,8 @@ public class Player extends Sprite {
             dx = 0;
         }
     }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
 }

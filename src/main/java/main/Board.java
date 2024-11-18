@@ -28,12 +28,12 @@ public class Board extends JPanel {
     private Player player;
     private Shot shot;
 
-    private int direction = -1;
+    public int direction = -1;
     private int deaths = 0;
 
     private boolean inGame = true;
     private String explImg = "src/main/resources/images/explosion.png";
-    private String message = "Game Over";
+    public String message = "Game Over";
 
     private Timer timer;
 
