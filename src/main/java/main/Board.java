@@ -408,6 +408,7 @@ public class Board extends JPanel {
         update();
         repaint();
     }
+
     /**FUNCIÓN RELACIONADA CON LA GESTIÓN DE INTERFAZ. NO ES NECESARIO PROBARLA.**/
     private class GameCycle implements ActionListener {
 

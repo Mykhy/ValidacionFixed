@@ -218,4 +218,97 @@ public class boardTestCB {
     }
 
 
-}
+    @Test
+    void testBomb_Update() {
+        //Los 5 caminos
+    testBombHitsGround();
+    testNoBombDropped();
+    testBombHitsPlayer();
+    testMultipleBombsDropped();
+    testBombDoesNotHitPlayerOrGround();
+
+    }
+
+    void testBombHitsPlayer() {
+        // Configuración: Simular una bomba de un alienígena que golpea al jugador
+        Alien alien = board.getAliens().get(0); // Obtener el primer alienígena
+        Player player = board.getPlayer();
+
+        // Posicionar la bomba para que golpee al jugador
+        alien.getBomb().setX(player.getX());
+        alien.getBomb().setY(player.getY());
+        alien.getBomb().setDestroyed(false);
+
+        // Acción
+        board.update_bomb();
+
+        // Verificar que el jugador fue alcanzado y la bomba se destruyó
+        assertFalse(player.isVisible(), "El jugador debería desaparecer tras ser alcanzado por la bomba.");
+        assertTrue(alien.getBomb().isDestroyed(), "La bomba debería destruirse tras golpear al jugador.");
+    }
+
+
+    void testBombHitsGround() {
+        // Configuración: Simular una bomba que llega al suelo
+        Alien alien = board.getAliens().get(0); // Obtener el primer alienígena
+        alien.getBomb().setX(100);
+        alien.getBomb().setY(Commons.GROUND - Commons.BOMB_HEIGHT);
+        alien.getBomb().setDestroyed(false);
+
+        // Acción
+        board.update_bomb();
+
+        // Verificar que la bomba se destruyó al llegar al suelo
+        assertTrue(alien.getBomb().isDestroyed(), "La bomba debería destruirse tras llegar al suelo.");
+    }
+
+
+    void testBombDoesNotHitPlayerOrGround() {
+        // Configuración: Simular una bomba en el aire
+        Alien alien = board.getAliens().get(0); // Obtener el primer alienígena
+        alien.getBomb().setX(100);
+        alien.getBomb().setY(100);
+        alien.getBomb().setDestroyed(false);
+
+        // Acción
+        board.update_bomb();
+
+        // Verificar que la bomba continúa moviéndose hacia abajo
+        assertEquals(101, alien.getBomb().getY(), "La bomba debería moverse hacia abajo en 1 unidad.");
+        assertFalse(alien.getBomb().isDestroyed(), "La bomba no debería destruirse mientras esté en el aire.");
+    }
+
+
+    void testNoBombDropped() {
+        // Configuración: Simular que no se lanza ninguna bomba
+        Alien alien = board.getAliens().get(0); // Obtener el primer alienígena
+        alien.getBomb().setDestroyed(true); // La bomba está destruida (no lanzada)
+
+        // Acción
+        board.update_bomb();
+
+        // Verificar que no pasa nada
+        assertTrue(alien.getBomb().isDestroyed(), "No debería crearse ni actualizarse ninguna bomba.");
+    }
+
+
+    void testMultipleBombsDropped() {
+        // Configuración: Simular que varios alienígenas lanzan bombas
+        List<Alien> aliens = board.getAliens();
+        for (Alien alien : aliens) {
+            alien.getBomb().setX(alien.getX());
+            alien.getBomb().setY(alien.getY());
+            alien.getBomb().setDestroyed(false);
+        }
+
+        // Acción
+        board.update_bomb();
+
+        // Verificar que todas las bombas se movieron hacia abajo
+        for (Alien alien : aliens) {
+            assertEquals(alien.getY() + 1, alien.getBomb().getY(), "Cada bomba debería moverse hacia abajo en 1 unidad.");
+        }
+    }
+    }
+
+

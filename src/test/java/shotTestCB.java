@@ -1,10 +1,8 @@
 import org.junit.jupiter.api.Test;
-import space_invaders.sprites.Alien;
 import space_invaders.sprites.Shot;
 
-import java.lang.reflect.Method;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class shotTestCB {
 
