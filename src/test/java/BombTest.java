@@ -68,81 +68,81 @@ public class BombTest {
 
     @org.junit.jupiter.api.Test
     void initbomb1(){
-        bomb.initBomb(1,1);
-        assertEquals(1,bomb.getX());
-        assertEquals(1,bomb.getY());
+        bomb.initBomb(-1,200);
+        assertEquals(0,bomb.getX());
+        assertEquals(200,bomb.getY());
     }
     @org.junit.jupiter.api.Test
     void initbomb2(){
-        bomb.initBomb(1,1);
-        assertEquals(1,bomb.getX());
-        assertEquals(1,bomb.getY());
+        bomb.initBomb(0,200);
+        assertEquals(0,bomb.getX());
+        assertEquals(200,bomb.getY());
     }
     @org.junit.jupiter.api.Test
     void initbomb3(){
-        bomb.initBomb(1,1);
+        bomb.initBomb(1,200);
         assertEquals(1,bomb.getX());
-        assertEquals(1,bomb.getY());
+        assertEquals(200,bomb.getY());
     }
     @org.junit.jupiter.api.Test
     void initbomb4(){
-        bomb.initBomb(1,1);
-        assertEquals(1,bomb.getX());
-        assertEquals(1,bomb.getY());
+        bomb.initBomb(200,-1);
+        assertEquals(200,bomb.getX());
+        assertEquals(0,bomb.getY());
     }
     @org.junit.jupiter.api.Test
     void initbomb5(){
-        bomb.initBomb(1,1);
-        assertEquals(1,bomb.getX());
-        assertEquals(1,bomb.getY());
+        bomb.initBomb(200,0);
+        assertEquals(200,bomb.getX());
+        assertEquals(0,bomb.getY());
     }
     @org.junit.jupiter.api.Test
     void initbomb6(){
-        bomb.initBomb(1,1);
-        assertEquals(1,bomb.getX());
+        bomb.initBomb(200,1);
+        assertEquals(200,bomb.getX());
         assertEquals(1,bomb.getY());
     }
     @org.junit.jupiter.api.Test
     void initbomb7(){
-        bomb.initBomb(1,1);
-        assertEquals(1,bomb.getX());
-        assertEquals(1,bomb.getY());
+        bomb.initBomb(200,200);
+        assertEquals(200,bomb.getX());
+        assertEquals(200,bomb.getY());
     }
     @org.junit.jupiter.api.Test
     void initbomb8(){
-        bomb.initBomb(1,1);
-        assertEquals(1,bomb.getX());
-        assertEquals(1,bomb.getY());
+        bomb.initBomb(358,200);
+        assertEquals(358,bomb.getX());
+        assertEquals(200,bomb.getY());
     }
     @org.junit.jupiter.api.Test
     void initbomb9(){
-        bomb.initBomb(1,1);
-        assertEquals(1,bomb.getX());
-        assertEquals(1,bomb.getY());
+        bomb.initBomb(357,200);
+        assertEquals(357,bomb.getX());
+        assertEquals(200,bomb.getY());
     }
     @org.junit.jupiter.api.Test
     void initbomb10(){
-        bomb.initBomb(1,1);
-        assertEquals(1,bomb.getX());
-        assertEquals(1,bomb.getY());
+        bomb.initBomb(359,200);
+        assertEquals(358,bomb.getX());
+        assertEquals(200,bomb.getY());
     }
     @org.junit.jupiter.api.Test
     void initbomb11(){
-        bomb.initBomb(1,1);
-        assertEquals(1,bomb.getX());
-        assertEquals(1,bomb.getY());
+        bomb.initBomb(200,350);
+        assertEquals(200,bomb.getX());
+        assertEquals(350,bomb.getY());
     }
     @org.junit.jupiter.api.Test
     void initbomb12(){
-        bomb.initBomb(1,1);
-        assertEquals(1,bomb.getX());
-        assertEquals(1,bomb.getY());
+        bomb.initBomb(200,349);
+        assertEquals(200,bomb.getX());
+        assertEquals(349,bomb.getY());
     }
     @org.junit.jupiter.api.Test
     void initbomb13(){
-        bomb.initBomb(1,1);
-        assertEquals(1,bomb.getX());
-        assertEquals(1,bomb.getY());
+        bomb.initBomb(200,351);
+        assertEquals(200,bomb.getX());
+        assertEquals(350,bomb.getY());
     }
     @org.junit.jupiter.api.Test
     void initbomb14(){
