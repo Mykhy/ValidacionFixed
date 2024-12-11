@@ -99,13 +99,19 @@ public class Alien extends Sprite {
 
             setDestroyed(true);
 
-            if (x<= Commons.BOARD_WIDTH && y<= Commons.BOARD_HEIGHT) {
-                this.x += x;
-                this.y += y;
-            } else
-            {
+            if (x > Commons.BOARD_WIDTH){
                 this.x = Commons.BOARD_WIDTH;
+            } else if (x < 0) {
+                this.x = 0;
+            } else {
+                this.x = x;
+            }
+            if (y > Commons.BOARD_HEIGHT) {
                 this.y = Commons.BOARD_HEIGHT;
+            } else if (y < 0){
+                this.y = 0;
+            }else {
+                this.y = y;
             }
 
             var bombImg = "src/main/resources/images/bomb.png";
