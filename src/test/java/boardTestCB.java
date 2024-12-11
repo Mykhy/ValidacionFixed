@@ -96,7 +96,7 @@ public class boardTestCB {
         board.getShot().setY(shotY);
         // Configurar alienígena si existe
         if (!board.getAliens().isEmpty()) {
-            Alien targetAlien = board.getAliens().getFirst();
+            Alien targetAlien = board.getAliens().get(0);
             targetAlien.setVisible(alienVisible);
             targetAlien.setX(alienX);
             targetAlien.setY(alienY);
