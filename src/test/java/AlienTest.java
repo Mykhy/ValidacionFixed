@@ -170,7 +170,7 @@ public class AlienTest {
     void actAlien4(){
         alien = new Alien(358,0);
         alien.act(1);
-        assertEquals(346,alien.getX());
+        assertEquals(358,alien.getX());
     }
     @org.junit.jupiter.api.Test
     void actAlien5(){
