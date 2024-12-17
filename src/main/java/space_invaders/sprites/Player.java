@@ -40,14 +40,14 @@ public class Player extends Sprite {
 
         x += dx;
 
-        if (x >= 2) {
+        if (x < 0) {
 
-            x = 2;
+            x = 0;
         }
 
-        if (x >= Commons.BOARD_WIDTH - 2 * width) {
+        if (x > Commons.BOARD_WIDTH) {
 
-            x = Commons.BOARD_WIDTH - 2 * width;
+            x = Commons.BOARD_WIDTH;
         }
     }
     /**

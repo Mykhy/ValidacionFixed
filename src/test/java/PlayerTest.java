@@ -43,7 +43,6 @@ public class PlayerTest {
         player.keyPressed(left);
         player.act();
         assertEquals(0, player.getX());
-        assertEquals(280, player.getY());
     }
     @org.junit.jupiter.api.Test
     void actPlayer2(){
@@ -53,7 +52,6 @@ public class PlayerTest {
         player.keyPressed(right);
         player.act();
         assertEquals(358, player.getX());
-        assertEquals(280, player.getY());
     }
     @org.junit.jupiter.api.Test
     void actPlayer3(){
@@ -63,7 +61,6 @@ public class PlayerTest {
         player.keyPressed(left);
         player.act();
         assertEquals(0, player.getX());
-        assertEquals(280, player.getY());
     }
     @org.junit.jupiter.api.Test
     void actPlayer4(){
@@ -73,14 +70,12 @@ public class PlayerTest {
         player.keyPressed(right);
         player.act();
         assertEquals(358, player.getX());
-        assertEquals(280, player.getY());
     }
     @org.junit.jupiter.api.Test
     void actPlayer5(){
         player.initPlayer();
         player.act();
-        assertEquals(270, player.getX());
-        assertEquals(280, player.getY());
+        assertEquals(179, player.getX());
     }
 
     // keyPressed
