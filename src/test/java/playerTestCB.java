@@ -35,16 +35,15 @@ class playerTestCB {
     @ParameterizedTest
     @CsvSource({
             // KeyEvent.VK_LEFT = 37
-            "5, 15, 5, 37, Camino 1: Movimiento a la izquierda, restringido por BORDER_LEFT",
+            "0, 0, 37, Camino 1: Movimiento a la izquierda, restringido por BORDER_LEFT",
             // KeyEvent.VK_RIGHT = 39
-            "328, 15, 328, 39, Camino 2: Movimiento a la derecha, restringido por BORDER_RIGHT",
+            "358, 358, 39, Camino 2: Movimiento a la derecha, restringido por BORDER_RIGHT",
             // KeyEvent.VK_RIGHT = 39
-            "50, 15, 52, 39, Camino 3: Movimiento dentro de los bordes"
+            "50, 52, 39, Camino 3: Movimiento dentro de los bordes"
     })
-    void testPlayerAct(int startX, int width, int expectedX, int keyCode, String message) {
+    void testPlayerAct(int startX, int expectedX, int keyCode, String message) {
         KeyEvent keyEvent = new KeyEvent(panel, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, keyCode, ' ');
         player.setX(startX);
-        player.setWidth(width);
         player.keyPressed(keyEvent);
         player.act();
 
