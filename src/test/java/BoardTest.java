@@ -28,14 +28,16 @@ public class BoardTest {
         int expectedX = Commons.ALIEN_INIT_X;
         int expectedY = Commons.ALIEN_INIT_Y;
         int y = 0;
+        int suma = 0;
         for(int i = 0; i < Commons.NUMBER_OF_ALIENS_TO_DESTROY;i++){
             Alien alien = aliens.get(i);
             if(alien.getY() == expectedY + 18){
                 expectedY += 18;
-                y = 0;
+                y = 1;
                 expectedX = Commons.ALIEN_INIT_X;
             }else {
-                expectedX = Commons.ALIEN_INIT_X + 18 * y;
+                suma = 18 * y;
+                expectedX = Commons.ALIEN_INIT_X + suma;
                 y++;
             }
             assertEquals(expectedX, alien.getX());
