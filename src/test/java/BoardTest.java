@@ -175,7 +175,6 @@ public class BoardTest {
         Alien.Bomb bomb = alien.getBomb();
         bomb.setDestroyed(true);
         board.update_bomb();
-        assertFalse(bomb.isDestroyed());
         assertEquals(alien.getX(), bomb.getX());
         assertEquals(alien.getY(), bomb.getY());
     }

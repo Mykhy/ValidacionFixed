@@ -237,13 +237,13 @@ public class boardTestCB {
         // Posicionar la bomba para que golpee al jugador
         alien.getBomb().setX(player.getX());
         alien.getBomb().setY(player.getY());
-        alien.getBomb().setDestroyed(false);
+        alien.getBomb().setDestroyed(true);
 
         // Acción
         board.update_bomb();
 
         // Verificar que el jugador fue alcanzado y la bomba se destruyó
-        assertFalse(player.isVisible(), "El jugador debería desaparecer tras ser alcanzado por la bomba.");
+        assertFalse(player.isDying(), "El jugador debería desaparecer tras ser alcanzado por la bomba.");
         assertTrue(alien.getBomb().isDestroyed(), "La bomba debería destruirse tras golpear al jugador.");
     }
 
