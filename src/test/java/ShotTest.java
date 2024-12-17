@@ -16,56 +16,58 @@ public class ShotTest {
     @org.junit.jupiter.api.Test
     void constructor1(){
         shot = new Shot(0,175);
-        assertEquals(0,shot.getX());
-        assertEquals(175,shot.getY());
+        assertEquals(6,shot.getX());
+        assertEquals(174,shot.getY());
     }
     @org.junit.jupiter.api.Test
     void constructor2(){
         shot = new Shot(1,175);
-        assertEquals(1,shot.getX());
-        assertEquals(175,shot.getY());
+        assertEquals(7,shot.getX());
+        assertEquals(174,shot.getY());
     }
     @org.junit.jupiter.api.Test
     void constructor3(){
-        shot = new Shot(175,175);
-        assertEquals(175,shot.getX());
-        assertEquals(175,shot.getY());
+        shot = new Shot(179,350);
+        assertEquals(185,shot.getX());
+        assertEquals(349,shot.getY());
     }
     @org.junit.jupiter.api.Test
     void constructor4(){
-        shot = new Shot(175,0);
-        assertEquals(175,shot.getX());
-        assertEquals(0,shot.getY());
+        shot = new Shot(179,349);
+        assertEquals(185,shot.getX());
+        assertEquals(348,shot.getY());
     }
     @org.junit.jupiter.api.Test
     void constructor5(){
-        shot = new Shot(175,1);
-        assertEquals(175,shot.getX());
-        assertEquals(1,shot.getY());
+        shot = new Shot(179,175);
+        assertEquals(185,shot.getX());
+        assertEquals(174,shot.getY());
     }
     @org.junit.jupiter.api.Test
     void constructor6(){
-        shot = new Shot(358,175);
-        assertEquals(358,shot.getX());
-        assertEquals(175,shot.getY());
+        shot = new Shot(179,1);
+        assertEquals(185,shot.getX());
+        assertEquals(0,shot.getY());
     }
+
     @org.junit.jupiter.api.Test
     void constructor7(){
-        shot = new Shot(357,175);
-        assertEquals(357,shot.getX());
-        assertEquals(175,shot.getY());
+        shot = new Shot(179,0);
+        assertEquals(185,shot.getX());
+        assertEquals(-1,shot.getY());
     }
     @org.junit.jupiter.api.Test
     void constructor8(){
-        shot = new Shot(175,350);
-        assertEquals(175,shot.getX());
-        assertEquals(350,shot.getY());
+        shot = new Shot(357,175);
+        assertEquals(363,shot.getX());
+        assertEquals(174,shot.getY());
     }
+
     @org.junit.jupiter.api.Test
     void constructor9(){
-        shot = new Shot(175,349);
-        assertEquals(175,shot.getX());
-        assertEquals(349,shot.getY());
+        shot = new Shot(358,175);
+        assertEquals(364,shot.getX());
+        assertEquals(174,shot.getY());
     }
 
     //TEST CONSTRUCTOR VACIO
