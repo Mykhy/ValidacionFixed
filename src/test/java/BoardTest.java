@@ -67,10 +67,11 @@ public class BoardTest {
     void updateShot1(){
         board.gameInit();
         Alien alien = board.getAliens().get(0);
-        board.setDeaths(0);
+
         Shot shot = new Shot();
         shot.initShot(alien.getX() + 6, alien.getY() + 1);
         board.setShot(shot);
+        board.setDeaths(0);
         board.update_shots();
         assertTrue(alien.isDying());
         assertEquals(1, board.getDeaths());
@@ -81,7 +82,7 @@ public class BoardTest {
         Alien alien = board.getAliens().get(0);
         board.setDeaths(0);
         Shot shot = new Shot();
-        shot.initShot(alien.getX(), alien.getY() + 7);
+        shot.initShot(alien.getX(), alien.getY() + 6);
         board.setShot(shot);
         board.update_shots();
         assertTrue(alien.isDying());
@@ -138,21 +139,21 @@ public class BoardTest {
         board.update_aliens();
         assertEquals(1, board.getDirection());
         assertTrue(aliens.get(0).getX() >= initialX);
-        assertTrue(initialY > aliens.get(0).getY());
+        assertTrue(initialY < aliens.get(0).getY());
     }
     @org.junit.jupiter.api.Test
     void updateAliens4(){
         board.gameInit();
         board.setDirection(1);
         List<Alien> aliens = board.getAliens();
-        aliens.get(0).setX(328);
+        aliens.get(0).setX(316);
         aliens.get(0).setY(5);
         int initialX = aliens.get(0).getX();
         int initialY = aliens.get(0).getY();
         board.update_aliens();
         assertEquals(-1, board.getDirection());
         assertTrue(aliens.get(0).getX() <= initialX);
-        assertTrue(initialY > aliens.get(0).getY());
+        assertTrue(initialY < aliens.get(0).getY());
     }
     @org.junit.jupiter.api.Test
     void updateAliens5(){
