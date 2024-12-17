@@ -63,7 +63,7 @@ public class Player extends Sprite {
 
         if (key == KeyEvent.VK_LEFT) {
 
-            dx = 2;
+            dx = -2;
         }
 
         if (key == KeyEvent.VK_RIGHT) {
