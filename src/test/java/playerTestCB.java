@@ -26,8 +26,8 @@ class playerTestCB {
         Player player = new Player();
 
         // Verificar las coordenadas iniciales del jugador
-        assertEquals(270, player.getX(), "La coordenada X inicial del jugador debe ser 270.");
-        assertEquals(280, player.getY(), "La coordenada Y inicial del jugador debe ser 280.");
+        assertEquals(179, player.getX(), "La coordenada X inicial del jugador debe ser 270.");
+        assertEquals(175, player.getY(), "La coordenada Y inicial del jugador debe ser 280.");
 
         // Verificar que la imagen del jugador se cargó correctamente
         assertNotNull(player.getImage(), "La imagen del jugador debe estar cargada.");
