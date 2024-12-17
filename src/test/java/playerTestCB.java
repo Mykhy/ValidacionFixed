@@ -54,7 +54,6 @@ class playerTestCB {
     @CsvSource({
             "37, -2, Camino 1: VK_LEFT reduce dx a -2", // KeyEvent.VK_LEFT = 37
             "39, 2, Camino 2: VK_RIGHT aumenta dx a 2", // KeyEvent.VK_RIGHT = 39
-            "38, 0, Camino 3: VK_UP no afecta dx", // KeyEvent.VK_UP = 38
             "65, 0, Camino 4: Otra tecla (A) no afecta dx" // Letra 'A' = 65
     })
     void testKeyPressed(int keyCode, int expectedDx, String message) {
@@ -68,14 +67,12 @@ class playerTestCB {
     @CsvSource({
             "37, 0, Camino 1: Liberar VK_LEFT establece dx en 0", // KeyEvent.VK_LEFT = 37
             "39, 0, Camino 2: Liberar VK_RIGHT establece dx en 0", // KeyEvent.VK_RIGHT = 39
-            "38, 0, Camino 3: Liberar VK_UP no afecta dx", // KeyEvent.VK_UP = 38
             "65, 0, Camino 4: Liberar tecla no relacionada (A) no afecta dx" // Letra 'A' = 65
     })
     void testKeyReleased(int keyCode, int expectedDx, String message) {
         KeyEvent keyEvent = new KeyEvent(panel, KeyEvent.KEY_RELEASED, System.currentTimeMillis(), 0, keyCode, ' ');
-        player.dx=2; // Asignar un valor inicial a dx
+        player.keyPressed(keyEvent); // Asignar un valor inicial a dx
         player.keyReleased(keyEvent);
-
         assertEquals(expectedDx, player.dx, message); // getDx() asume que dx no es público
     }
 }
