@@ -1,3 +1,4 @@
+import main.Commons;
 import org.junit.jupiter.api.BeforeEach;
 import space_invaders.sprites.Player;
 
@@ -27,7 +28,7 @@ public class PlayerTest {
         assertNotNull(player);
         assertNotNull(player.getImage());
         int expectedX = 179;
-        int expectedY = 175;
+        int expectedY = 280;
         assertEquals(expectedX, player.getX());
         assertEquals(expectedY, player.getY());
     }

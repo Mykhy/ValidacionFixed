@@ -90,7 +90,7 @@ public class Board extends JPanel {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 6; j++) {
 
-                var alien = new Alien(Commons.ALIEN_INIT_X + 18 * j,
+                var alien = new Alien(Commons.ALIEN_INIT_X + 18 * j,    //SE HA CAMBIADO EL ALIEN_INIT_Y POR ALIEN_INIT_X
                         Commons.ALIEN_INIT_Y + 18 * i);
                 this.aliens.add(alien);
             }
@@ -235,7 +235,7 @@ public class Board extends JPanel {
      * */
     public void update() {
 
-        if (deaths == Commons.NUMBER_OF_ALIENS_TO_DESTROY) {
+        if (deaths == Commons.NUMBER_OF_ALIENS_TO_DESTROY) {    //SE CAMBIO COMMONS.CHANCE POR NUMBER_OF_ALIENS_TO_DESTROY
             inGame = false;
             timer.stop();
             message = "Game won!";
@@ -271,8 +271,8 @@ public class Board extends JPanel {
                         var ii = new ImageIcon(explImg);
                         alien.setImage(ii.getImage());
                         alien.setDying(true);
-                        alien.die();
-                        deaths++;
+                        alien.die();    //SE AÑADIO ESTA LINEA
+                        deaths++;   //SE CAMBIO DEATHS-- POR DEATHS++
                         this.shot.die();
                     }
                 }
@@ -299,9 +299,9 @@ public class Board extends JPanel {
 
             int x = alien.getX();
 
-            if (x >= Commons.BOARD_WIDTH - Commons.BORDER_RIGHT - Commons.ALIEN_WIDTH && direction == 1) {
+            if (x >= Commons.BOARD_WIDTH - Commons.BORDER_RIGHT - Commons.ALIEN_WIDTH && direction == 1) {  //SE MODIFICO ESTE CONDICIONAL
 
-                direction = -1;
+                direction = -1; //SE MODIFICO LA DIRECTION A -1
 
                 Iterator<Alien> i1 = this.aliens.iterator();
 
@@ -312,7 +312,7 @@ public class Board extends JPanel {
                 }
             }
 
-            if (x <= Commons.BORDER_LEFT && direction == -1) {
+            if (x <= Commons.BORDER_LEFT && direction == -1) { //SE MODIFICO ESTE CONDICIONAL
 
                 direction = 1;
 

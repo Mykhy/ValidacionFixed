@@ -27,14 +27,14 @@ public class Alien extends Sprite {
      * */
     public void initAlien(int x, int y) {
 
-        if (x> Commons.BOARD_WIDTH){
+        if (x> Commons.BOARD_WIDTH){    //CAMBIO EN LOS CONDICIONALES ANIDADOS
             this.x = Commons.BOARD_WIDTH;
         }else if (x<0){
             this.x = 0;
         } else {
             this.x = x;
         }
-        if (y> Commons.BOARD_HEIGHT){
+        if (y> Commons.BOARD_HEIGHT){   //CAMBIO EN LOS CONDICIONALES
             this.y = Commons.BOARD_HEIGHT;
         }else if (y<0){
             this.y=0;
@@ -55,9 +55,9 @@ public class Alien extends Sprite {
      * @param direction posición hacia la izquierda o derecha hacia la que se mueve el alien
      * */
     public void act(int direction) {
-        if(this.x + direction > Commons.BOARD_WIDTH){
+        if(this.x + direction > Commons.BOARD_WIDTH){   //CAMBIO EN EL CONDICIONAL
             this.x = Commons.BOARD_WIDTH;
-        } else if (this.x + direction < 0) {
+        } else if (this.x + direction < 0) {    //CAMBIO EN EL CONDICIONAL
             this.x = 0;
         } else {
             this.x = direction + this.x;
@@ -99,14 +99,14 @@ public class Alien extends Sprite {
 
             setDestroyed(true);
 
-            if (x > Commons.BOARD_WIDTH){
+            if (x > Commons.BOARD_WIDTH){   //CAMBIO EN LOS CONDICIONALES
                 this.x = Commons.BOARD_WIDTH;
             } else if (x < 0) {
                 this.x = 0;
             } else {
                 this.x = x;
             }
-            if (y > Commons.BOARD_HEIGHT) {
+            if (y > Commons.BOARD_HEIGHT) { // CAMBIO EN LOS CONDICIONALES
                 this.y = Commons.BOARD_HEIGHT;
             } else if (y < 0){
                 this.y = 0;

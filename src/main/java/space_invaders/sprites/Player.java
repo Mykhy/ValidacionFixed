@@ -27,7 +27,7 @@ public class Player extends Sprite {
         int START_X = 179;
         setX(START_X);
 
-        int START_Y = 175;
+        int START_Y = Commons.GROUND - Commons.PLAYER_HEIGHT;   //CAMBIADA LA INICIALIZACION DE PLAYER
         setY(START_Y);
     }
 
@@ -40,12 +40,12 @@ public class Player extends Sprite {
 
         x += dx;
 
-        if (x < 0) {
+        if (x < 0) { // SE CAMBIO CONDICIONAL
 
             x = 0;
         }
 
-        if (x > Commons.BOARD_WIDTH - 2 * Commons.PLAYER_WIDTH) {
+        if (x > Commons.BOARD_WIDTH - 2 * Commons.PLAYER_WIDTH) {   //SE CAMBIO CONDICIONAL
 
             x = Commons.BOARD_WIDTH - 2 * Commons.PLAYER_WIDTH;
         }
@@ -63,7 +63,7 @@ public class Player extends Sprite {
 
         if (key == KeyEvent.VK_LEFT) {
 
-            dx = -2;
+            dx = -2;    // SE CAMBIO DE DX = 2 A -2
         }
 
         if (key == KeyEvent.VK_RIGHT) {
