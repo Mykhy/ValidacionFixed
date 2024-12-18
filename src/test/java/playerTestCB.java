@@ -24,7 +24,6 @@ class playerTestCB {
     void testInitPlayer() {
         // Crear una instancia de Player
         Player player = new Player();
-
         // Verificar las coordenadas iniciales del jugador
         assertEquals(179, player.getX(), "La coordenada X inicial del jugador debe ser 270.");
         assertEquals(175, player.getY(), "La coordenada Y inicial del jugador debe ser 280.");

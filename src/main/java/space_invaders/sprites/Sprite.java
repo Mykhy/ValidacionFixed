@@ -10,6 +10,9 @@ public class Sprite {
 
     int x;
     int y;
+
+
+
     public int dx;
 
     public Sprite() {
@@ -91,7 +94,13 @@ public class Sprite {
 
         return x;
     }
+    public int getDx() {
+        return dx;
+    }
 
+    public void setDx(int dx) {
+        this.dx = dx;
+    }
     /**
      * Asigna el valor de eliminación de un elemento
      * @param dying true or false

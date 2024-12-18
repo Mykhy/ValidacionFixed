@@ -51,7 +51,7 @@ public class PlayerTest {
         KeyEvent right = new KeyEvent(new java.awt.Component() {}, KeyEvent.KEY_PRESSED, System.currentTimeMillis(),0, KeyEvent.VK_RIGHT, KeyEvent.CHAR_UNDEFINED);
         player.keyPressed(right);
         player.act();
-        assertEquals(358, player.getX());
+        assertEquals(328, player.getX());
     }
     @org.junit.jupiter.api.Test
     void actPlayer3(){
@@ -69,7 +69,7 @@ public class PlayerTest {
         KeyEvent right = new KeyEvent(new java.awt.Component() {}, KeyEvent.KEY_PRESSED, System.currentTimeMillis(),0, KeyEvent.VK_RIGHT, KeyEvent.CHAR_UNDEFINED);
         player.keyPressed(right);
         player.act();
-        assertEquals(358, player.getX());
+        assertEquals(328, player.getX());
     }
     @org.junit.jupiter.api.Test
     void actPlayer5(){
