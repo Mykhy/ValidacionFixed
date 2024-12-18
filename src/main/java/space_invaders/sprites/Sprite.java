@@ -94,10 +94,6 @@ public class Sprite {
 
         return x;
     }
-    public int getDx() {
-        return dx;
-    }
-
     public void setDx(int dx) {
         this.dx = dx;
     }

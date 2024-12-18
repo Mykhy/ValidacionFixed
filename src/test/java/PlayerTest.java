@@ -1,7 +1,5 @@
 import org.junit.jupiter.api.BeforeEach;
-import main.Commons;
 import space_invaders.sprites.Player;
-import space_invaders.sprites.Sprite;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;

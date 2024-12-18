@@ -9,7 +9,7 @@ import java.awt.event.KeyEvent;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class playerTestCB {
+class playerTestCb {
 
     private Player player;
     private JPanel panel; // Componente ficticio para generar KeyEvent
