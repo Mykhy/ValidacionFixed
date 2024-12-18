@@ -34,7 +34,7 @@ public class BoardTest {
         boardInstance = new Board();
 
         // Recuperación de los objetos inicializados
-        testAlien = boardInstance.getAliens().getFirst();
+        testAlien = boardInstance.getAliens().get(0);
         testPlayer = boardInstance.getPlayer();
         testShot = boardInstance.getShot();
         boolean allObjectsCreated = testAlien != null && testPlayer != null && testShot != null;
@@ -52,19 +52,20 @@ public class BoardTest {
 
         testPlayer = new Player();
         testShot = new Shot();
-        testAlien = boardInstance.getAliens().getFirst();
+        testAlien = boardInstance.getAliens().get(0);
         int initialAlienX = testAlien.getX();
 
         Alien.Bomb bombInstance = testAlien.getBomb();
 
         // Configuración inicial del estado tal que muera el disparo y el personaje se mueva
         testShot.setX(testAlien.getX());
-        testShot.setY(testAlien.getY());
+        testShot.setY(0);
         bombInstance.setX(testPlayer.getX() + Commons.PLAYER_WIDTH / 2);
         bombInstance.setY(testPlayer.getY() + Commons.PLAYER_HEIGHT / 2);
         testShot.setVisible(true);
         testAlien.setVisible(true);
         testPlayer.setDx(2);
+        bombInstance.setDestroyed(false);
 
         int initialPlayerX = testPlayer.getX();
 
@@ -85,7 +86,7 @@ public class BoardTest {
     public void testUpdateShotVisibility() {
         setupUpdateTests("TestUpdateShotVisibility");
 
-        testAlien = boardInstance.getAliens().getFirst();
+        testAlien = boardInstance.getAliens().get(0);
         testShot = new Shot();
 
         testShot.setX(testAlien.getX());
@@ -105,7 +106,7 @@ public class BoardTest {
     public void testAlienMovementUpdate() {
         setupUpdateTests("TestAlienMovementUpdate");
 
-        testAlien = boardInstance.getAliens().getFirst();
+        testAlien = boardInstance.getAliens().get(0);
         int initialAlienX = testAlien.getX();
 
         log.log(Level.INFO, "Posición inicial del alien: " + initialAlienX);
